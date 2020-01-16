@@ -36,7 +36,7 @@ def apply_coupons(cart, coupons)
     coupon = coupons[index]
     item = find_item_by_name_in_collection(coupon[:item], cart)
     if item != nil
-      new_count = item[:count]/coupon[:num]
+      new_count = (item[:count]/coupon[:num])*coupon[:num]
       item[:count] %= coupon[:num]
       new_name = item[:item]+" W/ COUPON"
       cart << {
