@@ -41,7 +41,7 @@ def apply_coupons(cart, coupons)
       new_name = item[:item]+" W/ COUPON"
       cart << {
         :item => new_name,
-        :price => item[:price],
+        :price => coupon[:price],
         :clearance => item[:clearance],
         :count => new_count
       }
