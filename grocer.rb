@@ -42,8 +42,8 @@ def apply_coupons(cart, coupons)
       cart << {
         :item => new_name,
         :price => item[:price],
-        :clerance = item[:clearance],
-        :count = new_count
+        :clerance => item[:clearance],
+        :count => new_count
       }
     end 
     index += 1
