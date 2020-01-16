@@ -10,8 +10,7 @@ def find_item_by_name_in_collection(name, collection)
 end
 
 def consolidate_cart(cart)
-  new_Hash = {}
-  new_Array = []
+  new_Cart = []
   index = 0 
   while index < cart.size 
     item = cart[index][:item]
