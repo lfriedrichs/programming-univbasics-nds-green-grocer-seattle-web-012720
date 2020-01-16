@@ -19,6 +19,8 @@ def consolidate_cart(cart)
     else 
       item = {
         item => cart[index][:item]
+        item => cart[index][:item]
+        item => cart[index][:item]
         }
     end
     index += 1 
