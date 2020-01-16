@@ -19,6 +19,7 @@ def consolidate_cart(cart)
       new_Array[new_Hash[item]][:count] += 1 
     else 
       new_Hash[item] = index
+      new_Array[index] = cart[index]
       new_Array[index][:count] = 1
     end
     index += 1 
