@@ -63,13 +63,16 @@ def apply_clearance(cart)
 end
 
 def checkout(cart, coupons)
-  # Consult README for inputs and outputs
-  #
-  # This method should call
-  # * consolidate_cart
-  # * apply_coupons
-  # * apply_clearance
-  #
-  # BEFORE it begins the work of calculating the total (or else you might have
-  # some irritated customers
+  consolidated_cart = consolidate_cart(cart)
+  apply_coupons_cart = apply_coupons(consolidated_cart, coupons)
+  final_cart = apply_clearance(apply_coupons_cart)
+  counter = 0
+  grand_total = 0
+  while counter < final_cart.size 
+    grand_total += final_cart[counter][:price]*final_cart[counter][:count]
+  end
+  if grand_total > 100
+    grand_total *= 0.9
+  end
+  grand_total
 end
