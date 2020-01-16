@@ -37,16 +37,18 @@ def apply_coupons(cart, coupons)
     item = find_item_by_name_in_collection(coupon[:item], cart)
     if item != nil
       new_count = item[:count]/coupon[:num]
-      item = item[:count]%coupon[:num]
+      item[:count] %= coupon[:num]
       new_name = item[:item]+" W/ COUPON"
       cart << {
         :item => new_name,
         :price => item[:price],
         :clerance = item[:clearance],
-        :count = 
+        :count = new_count
       }
     end 
+    index += 1
   end 
+  cart
 end
 
 def apply_clearance(cart)
