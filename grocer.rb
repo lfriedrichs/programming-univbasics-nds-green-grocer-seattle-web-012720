@@ -38,7 +38,7 @@ def apply_coupons(cart, coupons)
     if item != nil
       new_count = (item[:count]/coupon[:num])*coupon[:num]
       item[:count] %= coupon[:num]
-      new_name = item[:item]+" W/ COUPON"
+      new_name = "#{item[:item]} W/ COUPON"
       cart << {
         :item => new_name,
         :price => coupon[:cost]/coupon[:num],
